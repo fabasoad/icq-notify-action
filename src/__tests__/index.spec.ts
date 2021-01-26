@@ -2,6 +2,15 @@ import { getInput, setFailed } from '@actions/core'
 import itParam from 'mocha-param'
 import { run } from '../index'
 
+interface FixtureParams {
+  [key: string]: string,
+}
+
+interface Fixture {
+  params: FixtureParams
+  title: string
+}
+
 describe('Main runner', () => {
   let setFailedMocked: jest.MockedFunction<typeof setFailed>
   let getInputMocked: jest.MockedFunction<typeof getInput>
@@ -10,8 +19,41 @@ describe('Main runner', () => {
     getInputMocked = jest.fn()
     setFailedMocked = jest.fn()
   })
+  afterEach(() => {
+    getInputMocked.mockReset()
+    setFailedMocked.mockReset()
+  })
 
-  it('should run successfully', async () => {
+  const fixture: Fixture[] = [
+    {
+      params: {
+        'token': 'test-token',
+        'to': 'test-to',
+        'message': 'test-message',
+        'file': ''
+      },
+      title: 'message'
+    },
+    {
+      params: {
+        'token': 'test-token',
+        'to': 'test-to',
+        'message': '',
+        'file': 'test-file'
+      },
+      title: 'file'
+    }
+  ]
+  itParam('should send ${value.title}', fixture, async ({ params }) => {
+    getInputMocked.mockImplementation((name: string) => params[name])
+    await run(
+      getInputMocked as typeof getInput,
+      setFailedMocked as typeof setFailed
+    )
+    Object.keys(params).forEach((p) => expect(getInputMocked).toBeCalledWith(p))
+  })
+
+  it('should run with default parameters', async () => {
     await run(
       getInputMocked as typeof getInput,
       setFailedMocked as typeof setFailed
@@ -19,9 +61,7 @@ describe('Main runner', () => {
   })
 
   itParam(
-    'should print error (${value})',
-    ['token', 'to', 'message'],
-    async (arg: string) => {
+    'should print error (${value})', ['token', 'to'], async (arg: string) => {
       const expectedMessage: string = '0a77hs2u'
       getInputMocked.mockImplementation((name: string) => {
         if (arg === name) {
@@ -36,9 +76,4 @@ describe('Main runner', () => {
       expect(setFailedMocked.mock.calls.length).toBe(1)
       expect(setFailedMocked.mock.calls[0][0]).toBe(expectedMessage + arg)
     })
-
-  afterEach(() => {
-    getInputMocked.mockReset()
-    setFailedMocked.mockReset()
-  })
 })

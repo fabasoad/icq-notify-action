@@ -3,8 +3,8 @@ name: 'ICQ Notify'
 author: Yevhen Fabizhevskyi
 description: 'ICQ Notify GitHub Action'
 branding:
-  icon: terminal
-  color: gray-dark
+  icon: tablet
+  color: green
 inputs:
   token:
     description: 'ICQ token'
@@ -14,7 +14,12 @@ inputs:
     required: true
   message:
     description: 'Text message'
-    required: true
+    required: false
+    default: null
+  file:
+    description: 'File message'
+    required: false
+    default: null
 runs:
   using: 'node12'
   main: 'dist/index.js'
