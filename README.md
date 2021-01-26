@@ -33,6 +33,7 @@ jobs:
           token: ${{ secrets.ICQ_TOKEN }}
           to: ${{ secrets.ICQ_TO }}
           message: 'Hello from GitHub Action'
+          file: README.md
 ```
 
 ### Result
