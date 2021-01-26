@@ -5,6 +5,16 @@ description: 'ICQ Notify GitHub Action'
 branding:
   icon: terminal
   color: gray-dark
+inputs:
+  token:
+    description: 'ICQ token'
+    required: true
+  to:
+    description: 'Recipient. Can be chat id or user nickname'
+    required: true
+  message:
+    description: 'Text message'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
