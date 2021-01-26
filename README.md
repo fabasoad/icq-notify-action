@@ -4,6 +4,14 @@
 
 [ICQ Notify](https://github.com/fabasoad/icq-notify-action) GitHub Action.
 
+## Inputs
+
+| Name    | Required | Description                                | Possible values  |
+|---------|----------|--------------------------------------------|------------------|
+| token   | Yes      | Path to the file to be converted           | _&lt;String&gt;_ |
+| to      | Yes      | Recipient. Can be chat id or user nickname | _&lt;String&gt;_ |
+| message | Yes      | Text message                               | _&lt;String&gt;_ |
+
 ## Example
 
 ### Usage
@@ -27,3 +35,5 @@ jobs:
 ```
 
 ### Result
+
+![Result](screenshot.png)
