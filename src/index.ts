@@ -1,10 +1,19 @@
-import { error } from '@actions/core';
+import { getInput, setFailed } from '@actions/core'
+import ICQ from 'icq-bot'
 
-export const run = async (err: typeof error = error) => {
+const INPUT_TOKEN = 'token'
+const INPUT_TO = 'to'
+const INPUT_MESSAGE = 'message'
+
+export const run = async (
+  gi: typeof getInput = getInput, sf: typeof setFailed = setFailed
+) => {
   try {
-    // Your main code here
+    const token = gi(INPUT_TOKEN)
+    const bot = new ICQ.Bot(token)
+    bot.sendText(gi(INPUT_TO), gi(INPUT_MESSAGE))
   } catch (e) {
-    err((<Error>e).message)
+    sf((<Error>e).message)
   }
 }
 

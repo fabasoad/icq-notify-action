@@ -1,25 +1,44 @@
-import { error } from '@actions/core'
+import { getInput, setFailed } from '@actions/core'
+import itParam from 'mocha-param'
 import { run } from '../index'
 
 describe('Main runner', () => {
-  let errorMocked
+  let setFailedMocked: jest.MockedFunction<typeof setFailed>
+  let getInputMocked: jest.MockedFunction<typeof getInput>
 
   beforeEach(() => {
-    errorMocked = jest.fn((m: string) => jest.not.toBeNull(m))
+    getInputMocked = jest.fn()
+    setFailedMocked = jest.fn()
   })
 
   it('should run successfully', async () => {
-    await run(errorMocked as typeof error)
+    await run(
+      getInputMocked as typeof getInput,
+      setFailedMocked as typeof setFailed
+    )
   })
 
-  it('should print error', async () => {
-    // const expectedMessage: string = '0a77hs2u'
-    await run(errorMocked as typeof error)
-    // expect(errorMocked.mock.calls.length).toBe(1)
-    // expect(errorMocked.mock.calls[0][0]).toBe(expectedMessage)
-  })
+  itParam(
+    'should print error (${value})',
+    ['token', 'to', 'message'],
+    async (arg: string) => {
+      const expectedMessage: string = '0a77hs2u'
+      getInputMocked.mockImplementation((name: string) => {
+        if (arg === name) {
+          throw new Error(expectedMessage + name)
+        }
+        return name
+      })
+      await run(
+        getInputMocked as typeof getInput,
+        setFailedMocked as typeof setFailed
+      )
+      expect(setFailedMocked.mock.calls.length).toBe(1)
+      expect(setFailedMocked.mock.calls[0][0]).toBe(expectedMessage + arg)
+    })
 
   afterEach(() => {
-    errorMocked.mockReset();
+    getInputMocked.mockReset()
+    setFailedMocked.mockReset()
   })
 })
