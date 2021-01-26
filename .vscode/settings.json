@@ -9,6 +9,8 @@
     "Autobuild",
     "UNSECURE",
     "codeql",
+    "issuehunt",
+    "liberapay",
     "markdownlint",
     "semver",
     "simbo",
