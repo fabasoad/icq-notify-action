@@ -3,7 +3,7 @@ name: Check updates
 
 on:
   schedule:
-    - cron: '0 0 1,15 * *'
+    - cron: '0 0 1 * *'
 
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
@@ -28,9 +28,7 @@ jobs:
         shell: bash
       - name: Check local changes
         id: git-diff
-        run: |
-          changed_files=$(git status --porcelain --untracked-files=no | wc -l)
-          echo '::set-output name=count::'
+        run: echo '::set-output name=count::'$(git status --porcelain --untracked-files=no | wc -l)
         shell: bash
       - name: Increase version
         if: ${{ steps.git-diff.outputs.count > 0 }}
@@ -38,7 +36,7 @@ jobs:
         shell: bash
       - name: Create PR
         if: ${{ steps.git-diff.outputs.count > 0 }}
-        uses: peter-evans/create-pull-request@v3.6.0
+        uses: peter-evans/create-pull-request@v3.8.2
         env:
           HUSKY: 0
         with:
