@@ -3308,10 +3308,10 @@ iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-icq-bot@2.1.44:
-  version "2.1.44"
-  resolved "https://registry.yarnpkg.com/icq-bot/-/icq-bot-2.1.44.tgz#bcd13af6832719bc247128e9f357fac2644f8d21"
-  integrity sha512-bERre2jtoUDnUyI34Dj6wyqSHgFChp6+3hn4eEVA/5PFtp8kgMWgfuUFfKIUtH0FBIKZcVLAbPyF/YL3pDKM6A==
+icq-bot@2.1.45:
+  version "2.1.45"
+  resolved "https://registry.yarnpkg.com/icq-bot/-/icq-bot-2.1.45.tgz#84d95cac876724e1d39e97c4fd05421aae905787"
+  integrity sha512-krbDNVUb853yVhmHGxwE+PB/JiqsAr8Blh1SBrK7DtBQTpD30tG2kfVGZiZJNOG7e5/hLJbYdXaCUwkKWYJxwQ==
 
 ieee754@^1.1.13:
   version "1.2.1"
