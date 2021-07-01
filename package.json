@@ -28,7 +28,7 @@
   "homepage": "https://github.com/fabasoad/icq-notify-action#readme",
   "dependencies": {
     "@actions/core": "1.2.7",
-    "@actions/tool-cache": "1.6.1",
+    "@actions/tool-cache": "1.7.1",
     "winston": "3.3.3"
   },
   "devDependencies": {
