@@ -800,10 +800,10 @@
     "@typescript-eslint/types" "5.3.0"
     eslint-visitor-keys "^3.0.0"
 
-"@vercel/ncc@0.31.1":
-  version "0.31.1"
-  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.31.1.tgz#9346c7e59326f5eeac75c0286e47df94c2d6d8f7"
-  integrity sha512-g0FAxwdViI6UzsiVz5HssIHqjcPa1EHL6h+2dcJD893SoCJaGdqqgUF09xnMW6goWnnhbLvgiKlgJWrJa+7qYA==
+"@vercel/ncc@0.32.0":
+  version "0.32.0"
+  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.32.0.tgz#42faafe0f41ea2a8e857785c10a31ef122f2416e"
+  integrity sha512-S/SxTHHTbBQSOutpgnqEn+LyTfZcq9xMRAnzY05HpGVjxjmfmvg6SWZZkbW/GJIFznMmHGeGOrI1MEBD7efIkA==
 
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.5"
@@ -3138,10 +3138,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-snyk@1.752.0:
-  version "1.752.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.752.0.tgz#2901c04e83eece1dde35b67a5658f7dd4e27ca6a"
-  integrity sha512-jaDO3UD5DwIn8kitJsUOLG7TRBtd0MKeHCXBBOqkVeAAcOMDo4oEtamdnJi2EUjPIUoMNZbpVRHU/p9MK91Q+Q==
+snyk@1.782.0:
+  version "1.782.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.782.0.tgz#77f2b939d8e9b7939e69b95e4f993c5110671c39"
+  integrity sha512-hCAau7JeeKBLaXrVCdcy0X0Yqp2a4qcaSqXzds5O7gBT4522Uzg2RD/+nhJYJ6VAt20blWI+ozasx8GKVzgSFg==
 
 source-map-support@^0.5.6:
   version "0.5.20"
