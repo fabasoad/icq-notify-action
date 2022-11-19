@@ -5,8 +5,6 @@
 ![Functional Tests](https://github.com/fabasoad/icq-notify-action/workflows/Functional%20Tests/badge.svg)
 ![Security Tests](https://github.com/fabasoad/icq-notify-action/workflows/Security%20Tests/badge.svg)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/fabasoad/icq-notify-action/main.svg)](https://results.pre-commit.ci/latest/github/fabasoad/icq-notify-action/main)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/fabasoad/icq-notify-action.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/icq-notify-action/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/fabasoad/icq-notify-action.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/icq-notify-action/context:javascript)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1827148121eb4f330c1b/maintainability)](https://codeclimate.com/github/fabasoad/icq-notify-action/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1827148121eb4f330c1b/test_coverage)](https://codeclimate.com/github/fabasoad/icq-notify-action/test_coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/fabasoad/icq-notify-action/badge.svg?targetFile=package.json)](https://snyk.io/test/github/fabasoad/icq-notify-action?targetFile=package.json)
