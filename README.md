@@ -13,14 +13,12 @@
 
 ## Inputs
 
-<!-- markdownlint-disable MD013 -->
 | Name    | Required | Description                                | Default | Type             |
 |---------|----------|--------------------------------------------|---------|------------------|
 | token   | Yes      | ICQ API token                              |         | _&lt;String&gt;_ |
 | to      | Yes      | Recipient. Can be chat id or user nickname |         | _&lt;String&gt;_ |
 | message | No       | Text message                               | `null`  | _&lt;String&gt;_ |
 | file    | No       | File message                               | `null`  | _&lt;String&gt;_ |
-<!-- markdownlint-enable MD013 -->
 
 ## Example
 
