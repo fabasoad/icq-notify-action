@@ -1,7 +1,7 @@
 ---
 default_install_hook_types: ["pre-commit", "pre-push"]
 default_stages: ["commit"]
-exclude: ^(\.gitleaks\.toml|dist/.*\.js|coverage/.*)$
+exclude: ^(dist/.*\.js|coverage/.*|\.yarn/.*)$
 minimum_pre_commit_version: 2.18.0
 repos:
   - repo: local
@@ -58,6 +58,7 @@ repos:
     hooks:
       - id: check-merge-conflict
       - id: check-json
+      - id: check-toml
       - id: detect-private-key
         stages: ["commit", "push"]
       - id: end-of-file-fixer
@@ -66,6 +67,5 @@ repos:
       - id: no-commit-to-branch
       - id: trailing-whitespace
 ci:
-  autofix_prs: true
-  autoupdate_schedule: quarterly
+  autofix_prs: false
   skip: [build, eslint, test]
