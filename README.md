@@ -1,5 +1,6 @@
 # ICQ Notify GitHub Action
 
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 ![GitHub release](https://img.shields.io/github/v/release/fabasoad/icq-notify-action?include_prereleases)
 ![Unit Tests](https://github.com/fabasoad/icq-notify-action/workflows/Unit%20Tests/badge.svg)
 ![Functional Tests](https://github.com/fabasoad/icq-notify-action/workflows/Functional%20Tests/badge.svg)
