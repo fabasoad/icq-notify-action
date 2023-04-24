@@ -1,7 +1,7 @@
 ---
 name: Unit Tests
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
     branches:
       - 'main'
@@ -12,7 +12,7 @@ defaults:
     shell: sh
 
 jobs:
-  unit_tests:
+  unit-tests:
     name: Lint and Test
     timeout-minutes: 5
     runs-on: ubuntu-latest
