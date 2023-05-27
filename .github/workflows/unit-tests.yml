@@ -13,7 +13,7 @@ defaults:
 
 jobs:
   unit-tests:
-    name: Lint and Test
+    name: Unit tests
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -31,8 +31,6 @@ jobs:
       - name: Compile
         if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
         run: yarn install
-      - name: Lint
-        run: yarn run lint
       - name: Unit tests
         if: github.ref != 'refs/heads/main'
         run: yarn test
