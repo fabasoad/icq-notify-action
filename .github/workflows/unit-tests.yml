@@ -13,7 +13,7 @@ defaults:
 
 jobs:
   unit-tests:
-    name: Lint and Test
+    name: Unit tests
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
