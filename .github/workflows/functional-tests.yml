@@ -8,7 +8,7 @@ on:  # yamllint disable-line rule:truthy
   pull_request:
 
 jobs:
-  functional_tests:
+  functional-tests:
     name: Send message
     timeout-minutes: 5
     runs-on: ubuntu-latest
