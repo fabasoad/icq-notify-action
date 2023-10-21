@@ -15,11 +15,11 @@ inputs:
   message:
     description: 'Text message'
     required: false
-    default: null
+    default: "null"
   file:
     description: 'File message'
     required: false
-    default: null
+    default: "null"
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
