@@ -18,8 +18,8 @@
 |---------|----------|--------------------------------------------|---------|------------------|
 | token   | Yes      | ICQ API token                              |         | _&lt;String&gt;_ |
 | to      | Yes      | Recipient. Can be chat id or user nickname |         | _&lt;String&gt;_ |
-| message | No       | Text message                               | `null`  | _&lt;String&gt;_ |
-| file    | No       | File message                               | `null`  | _&lt;String&gt;_ |
+| message | No       | Text message                               |         | _&lt;String&gt;_ |
+| file    | No       | File message                               |         | _&lt;String&gt;_ |
 
 ## Example
 
