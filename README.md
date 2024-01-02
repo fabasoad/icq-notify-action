@@ -5,7 +5,7 @@
 ![unit-tests](https://github.com/fabasoad/icq-notify-action/actions/workflows/unit-tests.yml/badge.svg)
 ![functional-tests](https://github.com/fabasoad/icq-notify-action/actions/workflows/functional-tests.yml/badge.svg)
 ![security](https://github.com/fabasoad/icq-notify-action/actions/workflows/security.yml/badge.svg)
-![pre-commit](https://github.com/fabasoad/icq-notify-action/actions/workflows/pre-commit.yml/badge.svg)
+![linting](https://github.com/fabasoad/icq-notify-action/actions/workflows/linting.yml/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1827148121eb4f330c1b/maintainability)](https://codeclimate.com/github/fabasoad/icq-notify-action/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1827148121eb4f330c1b/test_coverage)](https://codeclimate.com/github/fabasoad/icq-notify-action/test_coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/fabasoad/icq-notify-action/badge.svg?targetFile=package.json)](https://snyk.io/test/github/fabasoad/icq-notify-action?targetFile=package.json)
