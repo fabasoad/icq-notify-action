@@ -2,10 +2,10 @@
 name: Functional Tests
 
 on:  # yamllint disable-line rule:truthy
+  pull_request: {}
   push:
     branches:
-      - 'main'
-  pull_request:
+      - main
 
 jobs:
   functional-tests:
@@ -20,5 +20,5 @@ jobs:
         with:
           token: ${{ secrets.ICQ_TOKEN }}
           to: ${{ secrets.ICQ_TO }}
-          message: 'Hello from GitHub Action'
+          message: "Hello from GitHub Action"
           file: README.md
