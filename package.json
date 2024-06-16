@@ -1,6 +1,6 @@
 {
   "name": "icq-notify-action",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "ICQ Notify GitHub Action",
   "main": "dist/index.js",
   "repository": {
@@ -27,12 +27,12 @@
   "devDependencies": {
     "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@types/jest": "29.5.12",
-    "@types/node": "20.12.8",
+    "@types/node": "20.14.2",
     "@types/sinon": "10.0.20",
-    "@typescript-eslint/eslint-plugin": "7.8.0",
-    "@typescript-eslint/parser": "7.8.0",
+    "@typescript-eslint/eslint-plugin": "7.13.0",
+    "@typescript-eslint/parser": "7.13.0",
     "@vercel/ncc": "0.38.1",
-    "chai": "5.1.0",
+    "chai": "5.1.1",
     "eslint": "8.57.0",
     "eslint-config-google": "0.14.0",
     "icq-bot": "2.1.45",
@@ -40,8 +40,8 @@
     "jest-circus": "29.7.0",
     "mocha-param": "2.0.1",
     "sinon": "16.1.3",
-    "ts-jest": "29.1.2",
+    "ts-jest": "29.1.5",
     "typescript": "5.4.5"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.3.0"
 }

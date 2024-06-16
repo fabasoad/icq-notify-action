@@ -1,23 +1,23 @@
 ---
-name: 'ICQ Notify'
+name: "ICQ Notify"
 author: Yevhen Fabizhevskyi
-description: 'ICQ Notify GitHub Action'
+description: "ICQ Notify GitHub Action"
 branding:
   icon: tablet
   color: green
 inputs:
   token:
-    description: 'ICQ token'
+    description: "ICQ token"
     required: true
   to:
-    description: 'Recipient. Can be chat id or user nickname'
+    description: "Recipient. Can be chat id or user nickname"
     required: true
   message:
-    description: 'Text message'
+    description: "Text message"
     required: false
   file:
-    description: 'File message'
+    description: "File message"
     required: false
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node20"
+  main: "dist/index.js"
