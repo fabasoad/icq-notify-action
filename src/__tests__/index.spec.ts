@@ -44,7 +44,7 @@ describe('Main runner', () => {
       title: 'file'
     }
   ]
-  itParam('should send ${value.title}', fixture, async ({ params }) => {
+  test.each(fixture)('should send $title', async ({ params }) => {
     getInputMocked.mockImplementation((name: string) => params[name])
     await run(
       getInputMocked as typeof getInput,
@@ -53,15 +53,15 @@ describe('Main runner', () => {
     Object.keys(params).forEach((p) => expect(getInputMocked).toBeCalledWith(p))
   })
 
-  it('should run with default parameters', async () => {
+  test('should run with default parameters', async () => {
     await run(
       getInputMocked as typeof getInput,
       setFailedMocked as typeof setFailed
     )
   })
 
-  itParam(
-    'should print error (${value})', ['token', 'to'], async (arg: string) => {
+  test.each(['token', 'to'])(
+    'should print error (%s)', async (arg: string) => {
       const expectedMessage: string = '0a77hs2u'
       getInputMocked.mockImplementation((name: string) => {
         if (arg === name) {
