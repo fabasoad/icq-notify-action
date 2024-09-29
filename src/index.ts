@@ -7,29 +7,26 @@ const INPUT_TO = 'to'
 const INPUT_MESSAGE = 'message'
 const INPUT_FILE = 'file'
 
-export const run = async (
-  gi: typeof getInput = getInput,
-  sf: typeof setFailed = setFailed
-) => {
+export const run = async () => {
   try {
-    const token = gi(INPUT_TOKEN)
+    const token = getInput(INPUT_TOKEN)
     const bot = new ICQ.Bot(token)
-    const to = gi(INPUT_TO)
+    const to = getInput(INPUT_TO)
 
-    const message = gi(INPUT_MESSAGE)
+    const message = getInput(INPUT_MESSAGE)
     if (message) {
-      bot.sendText(to, message)
+      await bot.sendText(to, message)
     }
 
-    const file = gi(INPUT_FILE)
+    const file = getInput(INPUT_FILE)
     if (file) {
       if (!fs.existsSync(file)) {
         throw new Error(`File ${file} doesn't exist`)
       }
-      bot.sendFile(to, Buffer.from(file).toString('base64'), file)
+      await bot.sendFile(to, Buffer.from(file).toString('base64'), file)
     }
   } catch (e) {
-    sf((<Error>e).message)
+    setFailed((<Error>e).message)
   }
 }
 
