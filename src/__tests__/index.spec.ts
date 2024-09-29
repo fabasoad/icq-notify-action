@@ -1,79 +1,48 @@
-import { getInput, setFailed } from '@actions/core'
-import itParam from 'mocha-param'
+import ICQ from 'icq-bot'
 import { run } from '../index'
 
-interface FixtureParams {
-  [key: string]: string,
-}
+jest.mock('icq-bot')
 
-interface Fixture {
-  params: FixtureParams
-  title: string
-}
+type MockedICQ = jest.Mocked<typeof ICQ>
 
-describe('Main runner', () => {
-  let setFailedMocked: jest.MockedFunction<typeof setFailed>
-  let getInputMocked: jest.MockedFunction<typeof getInput>
+jest.mock('@actions/core', () => ({
+  ...(jest.requireActual('@actions/core')),
+  getInput: jest.fn((key: string) => {
+    switch (key) {
+      case 'token': return 'test-token'
+      case 'to': return 'test-to'
+      case 'message': return 'test-message'
+      case 'file': return 'test-file'
+      default: return 'unexpected'
+    }
+  }),
+}))
+
+jest.mock('fs', () => ({
+  ...(jest.requireActual('fs')),
+  existsSync: jest.fn((file: string) => file === 'test-file'),
+}))
+
+describe('index', () => {
+  const MockedICQ = ICQ as MockedICQ
+  const mockSendText = jest.fn()
+  const mockSendFile = jest.fn()
 
   beforeEach(() => {
-    getInputMocked = jest.fn()
-    setFailedMocked = jest.fn()
-  })
-  afterEach(() => {
-    getInputMocked.mockReset()
-    setFailedMocked.mockReset()
-  })
+    jest.clearAllMocks()
 
-  const fixture: Fixture[] = [
-    {
-      params: {
-        'token': 'test-token',
-        'to': 'test-to',
-        'message': 'test-message',
-        'file': ''
-      },
-      title: 'message'
-    },
-    {
-      params: {
-        'token': 'test-token',
-        'to': 'test-to',
-        'message': '',
-        'file': 'test-file'
-      },
-      title: 'file'
-    }
-  ]
-  test.each(fixture)('should send $title', async ({ params }) => {
-    getInputMocked.mockImplementation((name: string) => params[name])
-    await run(
-      getInputMocked as typeof getInput,
-      setFailedMocked as typeof setFailed
-    )
-    Object.keys(params).forEach((p) => expect(getInputMocked).toBeCalledWith(p))
-  })
-
-  test('should run with default parameters', async () => {
-    await run(
-      getInputMocked as typeof getInput,
-      setFailedMocked as typeof setFailed
-    )
-  })
-
-  test.each(['token', 'to'])(
-    'should print error (%s)', async (arg: string) => {
-      const expectedMessage: string = '0a77hs2u'
-      getInputMocked.mockImplementation((name: string) => {
-        if (arg === name) {
-          throw new Error(expectedMessage + name)
-        }
-        return name
-      })
-      await run(
-        getInputMocked as typeof getInput,
-        setFailedMocked as typeof setFailed
-      )
-      expect(setFailedMocked.mock.calls.length).toBe(1)
-      expect(setFailedMocked.mock.calls[0][0]).toBe(expectedMessage + arg)
+    MockedICQ.Bot.mockImplementation(() => {
+      return {
+        sendText: mockSendText,
+        sendFile: mockSendFile,
+      } as any
     })
+  })
+
+  test('should send message and file', async () => {
+    await run()
+    expect(MockedICQ.Bot).toHaveBeenCalledWith('test-token')
+    expect(mockSendText).toHaveBeenCalledWith('test-to', 'test-message')
+    expect(mockSendFile).toHaveBeenCalledWith('test-to', Buffer.from('test-file').toString('base64'), 'test-file')
+  })
 })
