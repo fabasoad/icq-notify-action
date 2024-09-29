@@ -17,7 +17,5 @@ on: # yamllint disable-line rule:truthy
 jobs:
   jest:
     name: Jest
-    uses: fabasoad/reusable-workflows/.github/workflows/wf-js-unit-tests.yml@feat/1727590947
+    uses: fabasoad/reusable-workflows/.github/workflows/wf-js-unit-tests.yml@main
     secrets: inherit # pragma: allowlist secret
-    with:
-      report-coverage: true
