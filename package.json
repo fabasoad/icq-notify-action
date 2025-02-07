@@ -21,12 +21,12 @@
   "homepage": "https://github.com/fabasoad/icq-notify-action#readme",
   "dependencies": {
     "@actions/core": "1.11.1",
-    "@actions/tool-cache": "2.0.1"
+    "@actions/tool-cache": "2.0.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/jest": "29.5.14",
-    "@types/node": "22.10.5",
+    "@types/node": "22.13.1",
     "@vercel/ncc": "0.38.3",
     "chai": "5.1.2",
     "icq-bot": "2.1.45",
