@@ -47,3 +47,7 @@ jobs:
 ### Result
 
 ![Result](screenshot.png)
+
+## Contributions
+
+![Alt](https://repobeats.axiom.co/api/embed/1463254973ac0e91284e7437325e373de758614d.svg "Repobeats analytics image")
