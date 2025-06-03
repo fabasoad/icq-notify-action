@@ -2,23 +2,18 @@ import { getInput, setFailed } from '@actions/core'
 import fs from 'fs'
 import ICQ from 'icq-bot'
 
-const INPUT_TOKEN = 'token'
-const INPUT_TO = 'to'
-const INPUT_MESSAGE = 'message'
-const INPUT_FILE = 'file'
-
-export const run = async () => {
+export async function run(): Promise<void> {
   try {
-    const token = getInput(INPUT_TOKEN)
+    const token: string = getInput('token', { required: true, trimWhitespace: true })
     const bot = new ICQ.Bot(token)
-    const to = getInput(INPUT_TO)
+    const to: string = getInput('to', { required: true, trimWhitespace: true })
 
-    const message = getInput(INPUT_MESSAGE)
+    const message: string = getInput('message', { required: false, trimWhitespace: true })
     if (message) {
       await bot.sendText(to, message)
     }
 
-    const file = getInput(INPUT_FILE)
+    const file: string = getInput('file', { required: false, trimWhitespace: true })
     if (file) {
       if (!fs.existsSync(file)) {
         throw new Error(`File ${file} doesn't exist`)
