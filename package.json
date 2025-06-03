@@ -1,6 +1,6 @@
 {
   "name": "icq-notify-action",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "ICQ Notify GitHub Action",
   "main": "src/index.ts",
   "repository": {
