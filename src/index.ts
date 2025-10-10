@@ -1,5 +1,5 @@
 import { getInput, setFailed } from '@actions/core'
-import fs from 'fs'
+import fs from 'node:fs'
 import ICQ from 'icq-bot'
 
 export async function run(): Promise<void> {

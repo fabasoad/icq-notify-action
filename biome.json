@@ -2,80 +2,36 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": false,
-      "a11y": { "noBlankTarget": "error" },
+      "recommended": true,
       "complexity": {
+        "noAdjacentSpacesInRegex": "error",
+        "noArguments": "error",
         "noExtraBooleanCast": "error",
-        "noMultipleSpacesInRegularExpressionLiterals": "error",
-        "noUselessCatch": "error",
-        "noWith": "error"
+        "noUselessCatch": "error"
       },
       "correctness": {
-        "noChildrenProp": "error",
-        "noConstAssign": "error",
-        "noConstantCondition": "error",
-        "noEmptyCharacterClassInRegex": "error",
-        "noEmptyPattern": "error",
-        "noGlobalObjectCalls": "error",
-        "noInnerDeclarations": "error",
-        "noInvalidConstructorSuper": "error",
-        "noNewSymbol": "error",
-        "noNonoctalDecimalEscape": "error",
-        "noPrecisionLoss": "error",
-        "noSelfAssign": "error",
-        "noSetterReturn": "error",
-        "noSwitchDeclarations": "error",
         "noUndeclaredVariables": "error",
-        "noUnreachable": "error",
-        "noUnreachableSuper": "error",
-        "noUnsafeFinally": "error",
-        "noUnsafeOptionalChaining": "error",
         "noUnusedLabels": "error",
-        "noUnusedVariables": "off",
-        "useIsNan": "error",
-        "useJsxKeyInIterable": "error",
-        "useValidForDirection": "error",
-        "useYield": "error"
+        "noUnusedVariables": "error",
+        "useJsxKeyInIterable": "error"
       },
-      "security": { "noDangerouslySetInnerHtml": "error" },
       "style": {
-        "noArguments": "error",
-        "noVar": "error",
         "useBlockStatements": "error",
         "useConst": "error",
         "useSingleVarDeclarator": "error"
       },
       "suspicious": {
-        "noAsyncPromiseExecutor": "error",
         "noCatchAssign": "error",
-        "noClassAssign": "error",
-        "noCommentText": "error",
-        "noCompareNegZero": "error",
-        "noControlCharactersInRegex": "error",
-        "noDebugger": "error",
-        "noDuplicateCase": "error",
-        "noDuplicateClassMembers": "error",
-        "noDuplicateJsxProps": "error",
-        "noDuplicateObjectKeys": "error",
-        "noDuplicateParameters": "error",
-        "noEmptyBlockStatements": "error",
-        "noFallthroughSwitchClause": "error",
-        "noFunctionAssign": "error",
-        "noGlobalAssign": "error",
-        "noImportAssign": "error",
-        "noMisleadingCharacterClass": "error",
+        "noEmptyBlockStatements": "warn",
         "noPrototypeBuiltins": "error",
-        "noRedeclare": "error",
-        "noShadowRestrictedNames": "error",
-        "noUnsafeNegation": "error",
-        "useGetterReturn": "error",
-        "useValidTypeof": "error"
+        "noVar": "error",
+        "useIterableCallbackReturn": "off"
       }
     },
-    "ignore": ["dist/**"]
+    "includes": ["src/**", "tests/**"]
   },
   "javascript": {
     "globals": ["Atomics", "SharedArrayBuffer", "jest", "afterEach", "beforeAll", "beforeEach", "expect", "test", "describe"]
   },
-  "overrides": [{ "include": ["**/*.spec.ts", "**/*.spec.tsx"] }]
+  "overrides": [{ "includes": ["**/*.spec.ts", "**/*.spec.tsx"] }]
 }

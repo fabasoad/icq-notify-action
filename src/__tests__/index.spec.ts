@@ -35,6 +35,7 @@ describe('index', () => {
       return {
         sendText: mockSendText,
         sendFile: mockSendFile,
+      // biome-ignore lint/suspicious/noExplicitAny: OK for testing
       } as any
     })
   })
