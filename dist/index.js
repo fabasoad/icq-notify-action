@@ -21415,7 +21415,7 @@ __export(index_exports, {
 });
 module.exports = __toCommonJS(index_exports);
 var import_core = __toESM(require_core());
-var import_fs = __toESM(require("fs"));
+var import_node_fs = __toESM(require("node:fs"));
 var import_icq_bot = __toESM(require_dist());
 async function run() {
   try {
@@ -21428,7 +21428,7 @@ async function run() {
     }
     const file = (0, import_core.getInput)("file", { required: false, trimWhitespace: true });
     if (file) {
-      if (!import_fs.default.existsSync(file)) {
+      if (!import_node_fs.default.existsSync(file)) {
         throw new Error(`File ${file} doesn't exist`);
       }
       await bot.sendFile(to, Buffer.from(file).toString("base64"), file);
