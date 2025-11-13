@@ -24,10 +24,10 @@
     "@actions/tool-cache": "2.0.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.4",
+    "@biomejs/biome": "2.3.5",
     "@types/jest": "30.0.0",
-    "@types/node": "24.10.0",
-    "chai": "6.2.0",
+    "@types/node": "24.10.1",
+    "chai": "6.2.1",
     "esbuild": "0.25.12",
     "icq-bot": "2.1.45",
     "jest": "30.2.0",
