@@ -1733,10 +1733,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chai@npm:~6.2.1":
-  version: 6.2.1
-  resolution: "chai@npm:6.2.1"
-  checksum: 10c0/0c2d84392d7c6d44ca5d14d94204f1760e22af68b83d1f4278b5c4d301dabfc0242da70954dd86b1eda01e438f42950de6cf9d569df2103678538e4014abe50b
+"chai@npm:~6.2.2":
+  version: 6.2.2
+  resolution: "chai@npm:6.2.2"
+  checksum: 10c0/e6c69e5f0c11dffe6ea13d0290936ebb68fcc1ad688b8e952e131df6a6d5797d5e860bc55cef1aca2e950c3e1f96daf79e9d5a70fb7dbaab4e46355e2635ed53
   languageName: node
   linkType: hard
 
@@ -2371,7 +2371,7 @@ __metadata:
     "@biomejs/biome": "npm:~2.3.10"
     "@types/jest": "npm:~30.0.0"
     "@types/node": "npm:~24.10.4"
-    chai: "npm:~6.2.1"
+    chai: "npm:~6.2.2"
     esbuild: "npm:~0.27.2"
     icq-bot: "npm:~2.1.45"
     jest: "npm:~30.2.0"
