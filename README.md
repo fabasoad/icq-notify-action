@@ -24,7 +24,7 @@
 ### Usage
 
 ```yaml
-- uses: fabasoad/icq-notify-action@v2
+- uses: fabasoad/icq-notify-action@v3
   with:
     token: ${{ secrets.ICQ_TOKEN }}
     to: ${{ secrets.ICQ_TO }}
