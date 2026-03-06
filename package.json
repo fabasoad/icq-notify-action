@@ -26,7 +26,7 @@
   "devDependencies": {
     "@biomejs/biome": "~2.4.6",
     "@types/jest": "~30.0.0",
-    "@types/node": "~25.3.3",
+    "@types/node": "~25.3.5",
     "chai": "~6.2.2",
     "esbuild": "~0.27.3",
     "icq-bot": "~2.1.45",
@@ -36,5 +36,5 @@
     "ts-jest": "~29.4.6",
     "typescript": "~5.9.3"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.13.0"
 }
