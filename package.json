@@ -24,7 +24,7 @@
     "@actions/tool-cache": "~4.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "~2.4.11",
+    "@biomejs/biome": "~2.4.12",
     "@types/jest": "~30.0.0",
     "@types/node": "~25.5.2",
     "chai": "~6.2.2",
