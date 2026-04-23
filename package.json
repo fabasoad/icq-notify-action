@@ -20,11 +20,11 @@
   "license": "MIT",
   "homepage": "https://github.com/fabasoad/icq-notify-action#readme",
   "dependencies": {
-    "@actions/core": "~3.0.0",
+    "@actions/core": "~3.0.1",
     "@actions/tool-cache": "~4.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "~2.4.12",
+    "@biomejs/biome": "~2.4.13",
     "@types/jest": "~30.0.0",
     "@types/node": "~25.5.2",
     "chai": "~6.2.2",
@@ -34,7 +34,7 @@
     "jest-circus": "~30.3.0",
     "mocha-param": "~2.0.1",
     "ts-jest": "~29.4.9",
-    "typescript": "~6.0.2"
+    "typescript": "~6.0.3"
   },
   "packageManager": "yarn@4.13.0"
 }
