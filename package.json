@@ -8,9 +8,11 @@
     "url": "git@github.com:fabasoad/icq-notify-action.git"
   },
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.js",
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node24 --outfile=dist/index.js",
     "lint": "biome lint --write src",
-    "test": "jest --config=jest.config.json --json --outputFile=jest-report.json --coverage"
+    "test": "jest --config=jest.config.json --json --outputFile=jest-report.json --coverage",
+    "clean": "rm -rf coverage && rm -rf temp",
+    "clean:unsafe": "rm -f package-lock.json && rm -rf node_modules && rm -rf dist"
   },
   "keywords": [
     "actions",
@@ -26,15 +28,14 @@
   "devDependencies": {
     "@biomejs/biome": "~2.4.14",
     "@types/jest": "~30.0.0",
-    "@types/node": "~25.5.2",
+    "@types/node": "~25.6.2",
     "chai": "~6.2.2",
-    "esbuild": "~0.27.7",
+    "esbuild": "~0.28.0",
     "icq-bot": "~2.1.45",
-    "jest": "~30.3.0",
-    "jest-circus": "~30.3.0",
+    "jest": "~30.4.2",
+    "jest-circus": "~30.4.2",
     "mocha-param": "~2.0.1",
     "ts-jest": "~29.4.9",
     "typescript": "~6.0.3"
-  },
-  "packageManager": "yarn@4.13.0"
+  }
 }
