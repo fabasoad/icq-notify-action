@@ -1,13 +1,16 @@
 import ICQ from 'icq-bot'
+import { vi, describe, beforeEach, test, expect } from 'vitest'
 import { run } from '../index'
 
-jest.mock('icq-bot')
+vi.mock('icq-bot')
 
-type MockedICQ = jest.Mocked<typeof ICQ>
+type MockedICQ = typeof ICQ & {
+  Bot: ReturnType<typeof vi.fn>
+}
 
-jest.mock('@actions/core', () => ({
-  ...(jest.requireActual('@actions/core')),
-  getInput: jest.fn((key: string) => {
+vi.mock('@actions/core', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@actions/core')>()),
+  getInput: vi.fn((key: string) => {
     switch (key) {
       case 'token': return 'test-token'
       case 'to': return 'test-to'
@@ -18,25 +21,28 @@ jest.mock('@actions/core', () => ({
   }),
 }))
 
-jest.mock('fs', () => ({
-  ...(jest.requireActual('fs')),
-  existsSync: jest.fn((file: string) => file === 'test-file'),
-}))
+vi.mock('node:fs', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('node:fs')>()
+  return {
+    ...actual,
+    default: {
+      ...actual,
+      existsSync: vi.fn((file: string) => file === 'test-file'),
+    },
+  }
+})
 
 describe('index', () => {
   const MockedICQ = ICQ as MockedICQ
-  const mockSendText = jest.fn()
-  const mockSendFile = jest.fn()
+  const mockSendText = vi.fn()
+  const mockSendFile = vi.fn()
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
 
-    MockedICQ.Bot.mockImplementation(() => {
-      return {
-        sendText: mockSendText,
-        sendFile: mockSendFile,
-      // biome-ignore lint/suspicious/noExplicitAny: OK for testing
-      } as any
+    MockedICQ.Bot.mockImplementation(class {
+      sendText = mockSendText
+      sendFile = mockSendFile
     })
   })
 
