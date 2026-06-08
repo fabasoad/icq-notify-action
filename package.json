@@ -1,6 +1,6 @@
 {
   "name": "icq-notify-action",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "ICQ Notify GitHub Action",
   "main": "src/index.ts",
   "repository": {
@@ -10,7 +10,7 @@
   "scripts": {
     "build": "esbuild src/index.ts --bundle --platform=node --target=node24 --outfile=dist/index.js",
     "lint": "biome lint --write src",
-    "test": "jest --config=jest.config.json --json --outputFile=jest-report.json --coverage",
+    "test": "vitest run --coverage",
     "clean": "rm -rf coverage && rm -rf temp",
     "clean:unsafe": "rm -f package-lock.json && rm -rf node_modules && rm -rf dist"
   },
@@ -27,15 +27,11 @@
   },
   "devDependencies": {
     "@biomejs/biome": "~2.4.16",
-    "@types/jest": "~30.0.0",
-    "@types/node": "~25.6.2",
-    "chai": "~6.2.2",
+    "@types/node": "~25.9.2",
+    "@vitest/coverage-v8": "~4.1.8",
     "esbuild": "~0.28.0",
     "icq-bot": "~2.1.45",
-    "jest": "~30.4.2",
-    "jest-circus": "~30.4.2",
-    "mocha-param": "~2.0.1",
-    "ts-jest": "~29.4.11",
-    "typescript": "~6.0.3"
+    "typescript": "~6.0.3",
+    "vitest": "~4.1.8"
   }
 }
