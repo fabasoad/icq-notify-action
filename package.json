@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "~2.4.16",
-    "@types/node": "~25.9.2",
+    "@types/node": "~25.9.3",
     "@vitest/coverage-v8": "~4.1.8",
     "esbuild": "~0.28.0",
     "icq-bot": "~2.1.45",
