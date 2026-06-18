@@ -1,6 +1,6 @@
 {
   "name": "icq-notify-action",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "ICQ Notify GitHub Action",
   "main": "src/index.ts",
   "repository": {
@@ -26,12 +26,12 @@
     "@actions/tool-cache": "~4.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "~2.4.16",
+    "@biomejs/biome": "~2.5.0",
     "@types/node": "~25.9.3",
-    "@vitest/coverage-v8": "~4.1.8",
+    "@vitest/coverage-v8": "~4.1.9",
     "esbuild": "~0.28.1",
     "icq-bot": "~2.1.45",
     "typescript": "~6.0.3",
-    "vitest": "~4.1.8"
+    "vitest": "~4.1.9"
   }
 }
