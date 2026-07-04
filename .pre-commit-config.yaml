@@ -29,7 +29,7 @@ repos:
         stages: ["pre-push"]
   # Security
       - id: audit
-        name: npm audit
+        name: pnpm audit
         entry: make audit
         language: unsupported
         pass_filenames: false
