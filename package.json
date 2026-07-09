@@ -27,12 +27,12 @@
     "@actions/tool-cache": "~4.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "~2.5.2",
-    "@types/node": "~26.1.0",
-    "@vitest/coverage-v8": "~4.1.9",
+    "@biomejs/biome": "~2.5.3",
+    "@types/node": "~26.1.1",
+    "@vitest/coverage-v8": "~4.1.10",
     "esbuild": "~0.28.1",
     "icq-bot": "~2.1.45",
     "typescript": "~6.0.3",
-    "vitest": "~4.1.9"
+    "vitest": "~4.1.10"
   }
 }
