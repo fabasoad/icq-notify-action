@@ -20,19 +20,19 @@
   ],
   "author": "Yevhen Fabizhevskyi",
   "license": "MIT",
-  "packageManager": "pnpm@11.9.0",
   "homepage": "https://github.com/fabasoad/icq-notify-action#readme",
   "dependencies": {
     "@actions/core": "~3.0.1",
     "@actions/tool-cache": "~4.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "~2.5.3",
+    "@biomejs/biome": "~2.5.4",
     "@types/node": "~26.1.1",
     "@vitest/coverage-v8": "~4.1.10",
     "esbuild": "~0.28.1",
     "icq-bot": "~2.1.45",
-    "typescript": "~6.0.3",
+    "typescript": "~7.0.2",
     "vitest": "~4.1.10"
-  }
+  },
+  "packageManager": "pnpm@11.13.1"
 }
