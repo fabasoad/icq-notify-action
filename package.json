@@ -1,6 +1,6 @@
 {
   "name": "icq-notify-action",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "ICQ Notify GitHub Action",
   "main": "src/index.ts",
   "repository": {
@@ -34,5 +34,5 @@
     "typescript": "~7.0.2",
     "vitest": "~4.1.10"
   },
-  "packageManager": "pnpm@11.13.1"
+  "packageManager": "pnpm@11.20.0"
 }
