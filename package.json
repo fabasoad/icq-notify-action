@@ -27,12 +27,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "~2.5.9",
-    "@types/node": "~26.1.2",
+    "@types/node": "~26.2.0",
     "@vitest/coverage-v8": "~4.1.11",
     "esbuild": "~0.28.2",
     "icq-bot": "~2.1.45",
     "typescript": "~7.0.2",
     "vitest": "~4.1.11"
   },
-  "packageManager": "pnpm@11.20.0"
+  "packageManager": "pnpm@11.23.0"
 }
