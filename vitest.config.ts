@@ -9,10 +9,10 @@ export default defineConfig({
       reporter: ['lcov', 'text', 'text-summary'],
       provider: 'v8',
       thresholds: {
-        branches: 50,
+        branches: 100,
         functions: 100,
-        lines: 85,
-        statements: 85,
+        lines: 100,
+        statements: 100,
       },
     },
     environment: 'node',
